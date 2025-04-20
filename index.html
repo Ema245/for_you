@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Îmi pare rău, Ionuț 💔</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 600px;
+      position: relative;
+    }
+    h1 {
+      color: #004d40;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      color: #444;
+      line-height: 1.6;
+    }
+    .badge {
+      font-size: 1.5em;
+      color: #ffffff;
+      background-color: #00796b;
+      padding: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in-out;
+      opacity: 0.8;
+    }
+    .heart:before, .heart:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+    .heart:after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 0.8; }
+      100% { transform: translateY(-800px) rotate(45deg); opacity: 0; }
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffd6e0;
+      border: none;
+      border-radius: 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #ffc2d4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Îmi pare rău, Ionuț 💙</h1>
+    <p>
+      Ionuț, știu că am dat multe refuzuri și nu am apreciat la timp cât de mult îți pasă de mine.<br>
+      Nu mi-am dat seama atunci cât de important erai pentru mine și cât de mult ai fi meritat mai multă atenție.<br>
+      Mă simt prost pentru că nu am văzut toate gesturile tale frumoase și acum îmi pare rău din suflet că am lăsat distanța să crească.<br>
+      Te rog să știi că apreciez cu adevărat tot ce ai făcut pentru mine și îmi doresc să repar ce am stricat.<br>
+      Îți promit că voi fi mai atentă și că voi învăța să te apreciez la adevărata ta valoare.<br>
+      Sper că mă vei înțelege și că vom putea vorbi din nou, poate chiar să construim ceva frumos împreună.<br>
+      Îmi pare rău, Ionuț! 💙💙💙
+    </p>
+    <span class="badge">Polițist</span>
+    <button class="btn" onclick="alert('Mulțumesc că m-ai ascultat! 💌')">Îți mulțumesc pentru răbdare!</button>
+  </div>
+
+  <script>
+    function createHearts() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.top = window.innerHeight + 'px';
+      heart.style.background = `hsl(${Math.random() * 360}, 70%, 70%)`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHearts, 300);
+  </script>
+</body>
+</html>
